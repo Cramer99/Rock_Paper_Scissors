@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors project</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>  
+    <section class="preview">
+
+    </section>
+    
+   <script>
+    let call = ['Rock', 'Paper', 'Scissors']
+    let para = document.createElement('p');
+
+    function computerPlay () {
+    let randomNumber = Math.floor(Math.random() * call.length);
+    let choice = call[randomNumber];
+
+    para.textContent = choice;}
+
+    computerPlay();
+
+    const section = document.querySelector('section');
+
+    section.appendChild(para);
+    
+ 
+   </script>
+</body>
+</html>
