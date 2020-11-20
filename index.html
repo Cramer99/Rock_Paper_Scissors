@@ -6,26 +6,78 @@
 </head>
 <body>  
     <section class="preview">
+      <div style="margin-bottom: 20px">
+        <input type="button" value="rock"></input>
+        <input type="button" value="paper"></input>
+        <input type="button" value="scissors"></input>
+      </div>
+      <div class="panel"> 
+      <div id="score">
+        Good luck!
+      </div>
+    </div>
 
+    <div id="result"></div>
     </section>
     
    <script>
-    let call = ['Rock', 'Paper', 'Scissors']
+
+    let playerScore = 0;
+    let compScore = 0;
+    const buttons = document.querySelectorAll('input');
+
     let para = document.createElement('p');
 
-    function computerPlay () {
+    function computerPlay() {
+    let call = ['rock', 'paper', 'scissors']
     let randomNumber = Math.floor(Math.random() * call.length);
     let choice = call[randomNumber];
 
-    para.textContent = choice;}
+    para.textContent = choice;
+    }
 
-    computerPlay();
+const section = document.querySelector('section');
+section.appendChild(para);
 
-    const section = document.querySelector('section');
+  
+    function playRound(playerSelection, computerSelection) {
+      console.log(computerSelection);
+      let roundResults = " ";
 
-    section.appendChild(para);
-    
- 
+      if (playerSelection === "rock") {
+        if (computerSelection === "scissors") {
+          roundResults.textContent = "You win!";
+        }else if (computerSelection === "paper") {
+          roundResults.textContent = "You lose!";
+        }else {
+          roundResults.textContent = "Tie!"
+        }
+      }else if (playerSelection === "paper") {
+        if (computerSelection === "rock") {
+        roundResults.textContent = "You win!";
+        } else if (computerSelection === "scissors") {
+        roundResults.textContent = "You lose!";
+        }else {
+          roundResults.textContent = "Tie!"
+        }
+      }else if (playerSelection === "scissors") {
+        if (computerSelection === "paper") {
+        roundResults.textContent = "You win!";
+        }else if (computerSelection == "rock") {
+        roundResults.textContent = "You lose!";
+        }else {
+        roundResults.textContent = "Tie!";
+        } 
+        
+    }
+    }
+
+    playRound();
+
+  
+
+
+
    </script>
 </body>
 </html>
