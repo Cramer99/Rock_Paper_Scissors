@@ -1,47 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Rock Paper Scissors project</title>
     <meta charset="UTF-8"/>
 </head>
 <body>  
-    <header>
-        <section class="scoreCard">
-            <div class="playerContainer">
-                <h1>Your Score</h1>
-            <h1 id="playerCounter">0</h1>
-            </div>
-            <h1>Rock Paper Scissors</h1>
-            <div class="computerContainer">
-                <h1>CPU Score</h1>
-            <h1 id="computerCounter">0</h1>
-        </div>
-        </section>
-    </header>
-    <section class="preview">
-        <div class="gameContainer">
-            <h2 id="result">Make a Choice</h2>
-      
-        <div style="margin-bottom: 20px">
-        <div class="buttonContainer">
-        <button onclick="playRound('rock', computerPlay())">Rock</button>
-        <button onclick="playRound('paper', computerPlay())">Paper</button>
-        <button onclick="playRound('scissors', computerPlay())">Scissors</button>
-      </div>
-    </div>
-      <div class="panel"> 
-      <div id="score">
-        Good luck!
-      </div>
-    </div>
 
-    <div id="result"></div>
+    <div id="sign"></div>
     </section>
     
 <script>
-    let playerScore = 0;
-    let computerScore = 0;
-
 function computerPlay() {
     let call = ['rock', 'paper', 'scissors']
     let randomNumber = Math.floor(Math.random() * call.length);
@@ -50,40 +18,35 @@ function computerPlay() {
     return choice;
     }
 
-
-
 function playRound(playerSelection, computerSelection) {
-      console.log(computerSelection);
+    console.log(computerSelection);
       switch(playerSelection) {
           case "rock":
             if (computerSelection === "rock") {
                 document.getElementById("result").innerHTML = "Draw! Try Again!";
             }else if (computerSelection === "paper") {
                 document.getElementById("result").innerHTML = "You Lose! Paper beats rock. Try again.";
-                computerScore++;
             }else if (computerSelection === "scissors") {
                 document.getElementById("result").innerHTML = "You win! Rock beats scissors. Try again.";
-                playerScore++;
             }
         break;
         case "paper":
             if (computerSelection === "rock") {
                 document.getElementById("result").innerHTML = "You win! Paper beats rock. Try again.";
-                playerScore++;
             }else if (computerSelection === "paper") {
                 document.getElementById("result").innerHTML = "Draw! Try again."
             }else if (computerSelection === "scissors") {
                 document.getElementById("result").innerHTML = "You lose! Scissors beats paper. Try again";
-                computerScore++;
+
             }
         break;
         case "scissors":
             if (computerSelection === "rock") {
                 document.getElementById("result").innerHTML = "You lose! Rock beats scissors. Try again";
-                computerScore++;
+
             }else if (computerSelection === "paper") {
                 document.getElementById("result").innerHTML = "You win! Scissors beats paper. Try again.";
-                playerScore++;
+
             }else if (computerSelection === "scissors") {
                 document.getElementById("result").innerHTML = "Draw! Try again.";
             }
@@ -91,14 +54,14 @@ function playRound(playerSelection, computerSelection) {
 
             }
 
-     
-      document.getElementById("playerCounter").innerHTML = playerScore;
-      document.getElementById("computerCounter").innerHTML = computerScore;
-      console.log(computerScore + "This is computer score");
-    }
+playRound;
 
-    function game() {
-        
-    }
+function game() {
+    let input;
+    input = prompt("Rock Paper Scissors?");
+    playRound;
 
+}
+ 
+}
 </script>
